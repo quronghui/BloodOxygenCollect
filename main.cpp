@@ -1,5 +1,3 @@
-#include <Arduino.h>
-
 #include "wakeup.h"
 #include "sensor.h"
 #include "bluetooth.h"
@@ -9,9 +7,9 @@
 
 void setup() {
   Serial.begin(115200);
-  wakeup_init();
-  sensor_init();
-  ble_init();       /* occupy most of programe */
+  wakeup_init();      /* provide power and LED light */
+  sensor_init();      /* Init IIC */
+  ble_init();       /* Open BLE server and advertising Ble address */
   // wifi_connect();   /* Over the programe size */
   timer_init();
 }

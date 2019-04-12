@@ -1,5 +1,5 @@
-/* data_sampling.cpp
-*
+/* 
+* data_sampling.cpp
 */
 #include "body_data.h"
 
@@ -25,22 +25,22 @@ void serial_data(){
 
 /*配置采样频率为200Hz 5次叠加 相当于40Hz*/
 void sampling_frequency(){
-    for(i=0;i<5;i++){
-          while(digitalRead(12)==1);  //wait until the interrupt pin asserts
-           maxim_max30102_read_fifo((aun_red_buffer), (aun_ir_buffer));  //read from MAX30102 FIFO
-           aun_red_buffer[4]+= aun_red_buffer[0];
-           aun_ir_buffer[4] += aun_ir_buffer[0];
+    for(i=0;i<5;i++){                         //if(!maxim_max30102_write_reg(REG_SPO2_CONFIG,0x2a))  
+        while(digitalRead(12)==1);            //When have new data, the pin charge to LOW, 
+        maxim_max30102_read_fifo((aun_red_buffer), (aun_ir_buffer));  //read from MAX30102 FIFO
+        aun_red_buffer[4] += aun_red_buffer[0];         /* 这里每次只能读首地址的数据，aun_red_buffer[0] */
+        aun_ir_buffer[4] += aun_ir_buffer[0];           /* 将这个数值叠加放大，放大波形的作用*/
     }
-    serial_data();
+    //serial_data();
 }
 
 /* data_convert */
 void data_convert(){
-    aun_red_buffer[4] = 21000000 - aun_red_buffer[4];
+    aun_red_buffer[4] = 21000000 - aun_red_buffer[4];   /* 翻转波形，测得的数据越大，需要显示的波形越小 */
     aun_ir_buffer[4] = 21000000 - aun_ir_buffer[4];
 
-    itoa(aun_red_buffer[4],datavalue1,10);  /* data convert to string */
-    itoa(aun_ir_buffer[4],datavalue2,10);
+    itoa(aun_red_buffer[4],datavalue1,10);  /*stdlib_noniso.c---nonstandard (but usefull) conversion functions.*/
+    itoa(aun_ir_buffer[4],datavalue2,10);   /* data convert to string  */
 
     strcat(datavalue1,datavalue2);          /* combination string */
     strcat(datavalue1,datavalue3);

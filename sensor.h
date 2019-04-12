@@ -7,7 +7,7 @@
 #define SENSOR_H
 
 /* Header */
-#include "Arduino.h"
+#include <Arduino.h>
 #include <max30102.h>
 #include <Wire.h>
 
