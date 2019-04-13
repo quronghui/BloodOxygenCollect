@@ -1,8 +1,6 @@
 /* wakeup_init.cpp  
-*   (1)The name defined need xxx.cpp. If you used xxx.c is a bug. 
-*       The bug is "collect2: error: ld returned 1 exit status".
-*   (2)Open device, pressing two seconds.
-*   (3)Init GPIO port.
+*   (1)Power board provide wkup high level, open device, pressing two seconds.
+*   (2)Init GPIO port.
 */
 #include "wakeup.h"
 
@@ -21,7 +19,7 @@ void wakeup_init(){
     if(cnt++ >= 200){
        digitalWrite(27,1);
        digitalWrite(32,1);
-       while(digitalRead(25));    //  这里的设置，开关的形式必须是按键的形式
+       while(digitalRead(25));    //  这里的设置，开关的形式必须是触点模式，而不是机械模式。
        return;
     }
     delay(10);

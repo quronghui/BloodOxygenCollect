@@ -1,5 +1,12 @@
 /* bluetooth.cpp
-*       
+*    (1)Creat BLE server:
+*       setting BLEServer callback funcation，
+*       judging a new client connecting or disconnect, 
+*       if connection, data_communication() transmit data to Phone APP.
+*    (2) Creat a service:
+*       Create a new BLE Characteristic associated with this service.
+*    (3) Open the startAdvertising, setScanResponseData is the BLE adress.
+*    (4) Serial_print ESP32 ble_mac_adress.
 */
 #include "bluetooth.h"
 

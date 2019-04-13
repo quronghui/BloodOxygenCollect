@@ -1,5 +1,7 @@
 /* timer.cpp
-*   (1)required memory is automatically dynamically allocated inside the xSemaphoreCreateBinary() function.
+*   (1)Required memory is automatically dynamically allocated inside the xSemaphoreCreateBinary() function.
+*   (2)Because phone app continuous work just one hour. So we set the battery work hour is 1.5hour.
+*      Setting digitalWrite(32,0).
 */
 #include "timer.h"
 

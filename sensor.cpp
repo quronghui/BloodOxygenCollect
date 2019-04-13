@@ -1,5 +1,6 @@
 /* sensor_init.cpp
-*   (1)Sensor used IIC communication;
+*   (1)By max30102 Blood Oxygen Sensor collect AD data.
+*   (2)Sensor used IIC communication transmit data to ESP32.
 *   (2)Init wire bus protocol.
 */
 #include "sensor.h"

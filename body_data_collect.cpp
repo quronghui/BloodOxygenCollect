@@ -1,5 +1,9 @@
 /* 
 * data_sampling.cpp
+*   (1) Before sampling data, check_wakeup() funcation check the Esp32 is normal power supply.
+*   (2) Setting the samping_frequency by max30102.cpp
+*   (3) data_convert():data convert to string
+*   (4) data_communication()：transmit to APP
 */
 #include "body_data.h"
 
