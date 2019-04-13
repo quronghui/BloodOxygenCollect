@@ -12,7 +12,7 @@ The item is based on  Arduino ESP32.
 
 - 使用ESP-IDF进行开发
 
-  ![platform.png](https://github.com/quronghui)
+  ![platform.png](https://github.com/quronghui/BloodOxygenCollect/blob/master/platform.png)
 
 - 例子的参考 [[espressif](https://github.com/espressif)/**esp-idf**  ]()
 
