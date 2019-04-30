@@ -35,13 +35,13 @@ void sampling_frequency(){
         aun_red_buffer[4] += aun_red_buffer[0];         /* 这里每次只能读首地址的数据，aun_red_buffer[0] */
         aun_ir_buffer[4] += aun_ir_buffer[0];           /* 将这个数值叠加放大，放大波形的作用*/
     }
-    //serial_data();
+    serial_data();
 }
 
 /* data_convert */
 void data_convert(){
-    aun_red_buffer[4] = 21000000 - aun_red_buffer[4];   /* 翻转波形，测得的数据越大，需要显示的波形越小 */
-    aun_ir_buffer[4] = 21000000 - aun_ir_buffer[4];
+    aun_red_buffer[4] = 21310715 - aun_red_buffer[4];   /* 翻转波形，测得的数据越大，需要显示的波形越小 */
+    aun_ir_buffer[4] = 21310715 - aun_ir_buffer[4];     /* APP设置max30102脱落的下限值10000 */
 
     itoa(aun_red_buffer[4],datavalue1,10);  /*stdlib_noniso.c---nonstandard (but usefull) conversion functions.*/
     itoa(aun_ir_buffer[4],datavalue2,10);   /* data convert to string  */
@@ -56,7 +56,7 @@ void data_communication(){
     if (deviceConnected) {
         pCharacteristic->setValue(datavalue1);
         pCharacteristic->notify();
-        Serial.println(datavalue1);
+        //Serial.println(datavalue1);
     } 
     aun_red_buffer[4]=10000000;
     aun_ir_buffer[4]=10000000;

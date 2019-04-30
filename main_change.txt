@@ -13,18 +13,26 @@
 #include "timer.h"
 #include "body_data.h"
 
+int sensor;
 
 void setup() {
   Serial.begin(115200);
   wakeup_init();      /* provide power and init gpio */
-  sensor_init();      /* Init IIC */
+  sensor = sensor_init();      /* Init IIC */
   ble_init();       /* Open BLE server and advertising Ble address */
   // wifi_connect();   /* Over the programe size */
   timer_init();
 }
 
 void loop() {
+  if (sensor) {
     data_sampling();
     data_communication();
   // put your main code here, to run repeatedly:
+  }
+  else
+  {
+    sensor =  sensor_init();      /* Init IIC */ 
+  }
+  
 }

@@ -11,7 +11,7 @@
 #include <max30102.h>
 #include <Wire.h>
 
-extern void sensor_init();
+extern int sensor_init();
 
 
 #endif

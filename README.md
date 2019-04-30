@@ -12,7 +12,7 @@ The item is based on  Arduino ESP32.
 
 - 使用ESP-IDF进行开发
 
-  ![platform.png](https://github.com/quronghui/BloodOxygenCollect/blob/master/platform.png)
+  ![platform.png](https://github.com/quronghui/BloodOxygenCollect/blob/master/photo/platform.png)
 
 - 例子的参考 [[espressif](https://github.com/espressif)/**esp-idf**  ]()
 
@@ -39,6 +39,16 @@ The item is based on  Arduino ESP32.
 
 */
 
+### MAX30102
+
+1. 采样频率的设置
+
+2. LED 驱动电流的控制
+
+   ![platform.png](https://github.com/quronghui/BloodOxygenCollect/blob/master/photo/LED_chorge.png)
+
+3. 采样频率的设置
+
 ## ESP32 Code firmware flush
 
 ### 通过官方的ESP Flash Download Tool 烧录固件
@@ -61,7 +71,7 @@ The item is based on  Arduino ESP32.
 
 3. 固件烧录
 
-   ![flushtool.png](https://github.com/quronghui/BloodOxygenCollect/blob/master/flushtool.png)
+   ![flushtool.png](https://github.com/quronghui/BloodOxygenCollect/blob/master/photo/flushtool.png)
 
    + 注意他们的分区地址
    + 点击 ERASE 擦除原先代码；
@@ -71,11 +81,11 @@ The item is based on  Arduino ESP32.
 
    + ESP32-WROOM-32 厂家固件的烧录
 
-     ![espwroom.png](https://github.com/quronghui/BloodOxygenCollect/blob/master/espwroom.png)
+     ![espwroom.png](https://github.com/quronghui/BloodOxygenCollect/blob/master/photo/espwroom.png)
 
    + ESP32-WROOM-32 二维码的生成和打印
 
-     ![QR__code.png](https://github.com/quronghui/BloodOxygenCollect/blob/master/QR__code.png)
+     ![QR__code.png](https://github.com/quronghui/BloodOxygenCollect/blob/master/photo/QR__code.png)
 
 ### 其他的下载方式
 
