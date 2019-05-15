@@ -41,7 +41,7 @@ void sampling_frequency(){
 /* data_convert */
 void data_convert(){
     aun_red_buffer[4] = 21310715 - aun_red_buffer[4];   /* 翻转波形，测得的数据越大，需要显示的波形越小 */
-    aun_ir_buffer[4] = 21310715 - aun_ir_buffer[4];     /* APP设置max30102脱落的下限值10000 */
+    aun_ir_buffer[4] = 21310715 - aun_ir_buffer[4];     /* APP设置max30102脱落的下限值10000; 原来的值是20000000*/
 
     itoa(aun_red_buffer[4],datavalue1,10);  /*stdlib_noniso.c---nonstandard (but usefull) conversion functions.*/
     itoa(aun_ir_buffer[4],datavalue2,10);   /* data convert to string  */
