@@ -35,7 +35,7 @@ void sampling_frequency(){
         aun_red_buffer[4] += aun_red_buffer[0];         /* 这里每次只能读首地址的数据，aun_red_buffer[0] */
         aun_ir_buffer[4] += aun_ir_buffer[0];           /* 将这个数值叠加放大，放大波形的作用*/
     }
-    serial_data();
+    //serial_data();
 }
 
 /* data_convert */

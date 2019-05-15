@@ -49,12 +49,6 @@ The item is based on  Arduino ESP32.
 
 3. 采样频率的设置
 
-### 血压监测仪
-
-1. 与手机能正常通讯，有一个蓝牙的接收和发送；
-2. [参考代码](https://blog.csdn.net/liwei16611/article/details/80949777)
-   + 修改 bluetooth.cpp
-
 ## ESP32 Code firmware flush
 
 ### 通过官方的ESP Flash Download Tool 烧录固件

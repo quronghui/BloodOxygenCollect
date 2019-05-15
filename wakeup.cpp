@@ -10,6 +10,9 @@ void Gpio_init(){
    pinMode(33, OUTPUT);  //led_r 红色LED， 代码里面没有33 引脚的拉高
    pinMode(27, OUTPUT);  //led_b 蓝色LED
    pinMode(25, INPUT);  //wkup   开机按键
+   pinMode(4, OUTPUT);  // 控制蜂鸣器
+   pinMode(16, OUTPUT); //控制振动传感器
+
 }
 
 void wakeup_init(){
