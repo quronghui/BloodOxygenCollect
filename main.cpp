@@ -20,8 +20,8 @@ void setup() {
   sensor_init();      /* Init IIC */
   ble_init();       /* Open BLE server and advertising Ble address */
   // wifi_connect();   /* Over the programe size */
-  timer_init();
-}
+  //timer_init();
+} 
 
 void loop() {
     data_sampling();
